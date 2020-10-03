@@ -1,4 +1,4 @@
-# aug2020-ctf
+# Riddle Me This CTF
 A CTF built by me and a few others in August 2020
 
 ## Setup
