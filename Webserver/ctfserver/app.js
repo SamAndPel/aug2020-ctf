@@ -61,7 +61,7 @@ app.get("/checkflag", (req, res) => {
 });
 
 app.get("/jellyfish", (req, res) => {
-    return res.send("Flag{}");
+    return res.send("Flag{U2VuZCBTb21lIEhlcm9lcw==}");
 });
 
 
