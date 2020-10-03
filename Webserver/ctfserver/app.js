@@ -52,7 +52,7 @@ io.on("connection", socket => {
 // ROUTES ----------------------------------------
 
 app.get("/", (req, res) => {
-    res.cookie("CookieFlag", "Flag{Go to twitter}");
+    res.cookie("CookieFlag", "flag{QHIxZGRsM19tM190aDFz}");
     return res.render("home.html.njk");
 });
 
