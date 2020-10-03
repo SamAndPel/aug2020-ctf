@@ -2,7 +2,7 @@
 A CTF built by me and a few others in August 2020
 
 ## Setup
-Install Node.JS or spin up a docker container to run the Node server. This functions as a starting point for the CTF, as well as a flag-checker. If hosting on a VM, the machine should be set to run the server at startup.
+Install Node.JS or spin up a docker container to run the Node server. This functions as a starting point for the CTF, as well as a flag-checker. If hosting on a VM, the machine should be set to run the server at startup. Make sure to use `npm install` to install the required dependancies.
 
 Set up the SSH credentials as required (enigma:batman), and add the required files to the target machine (/etc/motd, and ~/.bash_history)
 
