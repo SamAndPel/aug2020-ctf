@@ -1,0 +1,57 @@
+{% extends "base.html.njk" %}
+
+{% block content %}
+<h1 id="title">Flag checker</h1>
+<p class="poem">What took you so long? You're ever so late,</p>
+<p class="poem">Enter your flag and I'll decide your fate!</p>
+<div id="flag-div">
+    <input id="flag-input" placeholder="Enter encoded string"></input>
+    <button id="flag-button">Submit</button>
+</div>
+<div id="flag-response">
+    <p id="flag-response-head"></p>
+    <p id="flag-response-body" class="poem"></p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    // Initialise socket.io engine
+    var socket = io();
+
+    // Send to verification backend on submit click
+    document.getElementById("flag-button").addEventListener("click", () => {
+        let flag = document.getElementById("flag-input");
+        socket.emit("verification-input", flag.value);
+        console.log("[+] Flag sent to verification server: " + flag.value);
+        flag.value = "";
+    });
+
+    // Click the submit button if the enter key is pressed whilst flag-input box selected
+    document.getElementById("flag-input").addEventListener("keyup", event => {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("flag-button").click();
+        }
+    });
+
+    // Show response from flag verification api
+    socket.on("verification-output", msg => {
+        console.log("[+] Flag " + msg.flag +  ": " + msg.valid);
+        if (msg.valid) {
+            document.getElementById("flag-response-head").classList.remove("invalid");
+            document.getElementById("flag-response-head").classList.add("valid");
+            document.getElementById("flag-response-head").innerHTML = "VALID";
+            document.getElementById("flag-response-body").innerHTML = "A valid flag?! Goodness me!<br>Perhaps you're wise enough to go free!";
+        } else {
+            document.getElementById("flag-response-head").classList.remove("valid");
+            document.getElementById("flag-response-head").classList.add("invalid");
+            document.getElementById("flag-response-head").innerHTML = "INVALID";
+            document.getElementById("flag-response-body").innerHTML = "Ah, it seems you've hit a little snag,<br>For that is <b>not a valid flag</b>.";
+        }
+    });
+
+
+</script>
+{% endblock %}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Riddle Me This!</title>
+        <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <!-- HEADER BAR -->
+            <header>
+                <a id="headertitle" href="/">Riddle Me This!</a>
+                <img src="/riddler.png" alt="An image of The Riddler" height="50px"></img>
+                <a class="headerlink" href="/">Home</a>
+                <a class="headerlink" href="/checkflag">Check Flags</a>
+            </header>
+
+            <!-- MAIN CONTENT -->
+            <main>
+                {% block content %}
+                {% endblock %}
+            </main>
+
+            <!-- PADDING (to push footer down) -->
+            <div id="pad">
+            </div>
+
+            <!-- FOOTER BAR -->
+            <footer>
+                <p>Copyright Team Berlin, Summer 2020. Flag{SSBhbSBub3QgYS4uLiBQRVJNSVNTSU9OIERFTklFRA==}</p>
+            </footer>
+        </div>
+
+        {% block scripts %}
+        {% endblock %}
+    </body>
+
+</html>

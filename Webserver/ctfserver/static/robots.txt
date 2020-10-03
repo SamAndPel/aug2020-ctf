@@ -1,0 +1,4 @@
+You're clever, it seems, and gaining some ground,
+But keep up your search, there's more to be found!
+
+Flag{R3JhbmRtYSdzIGJlZW4gYmFraW5n}
