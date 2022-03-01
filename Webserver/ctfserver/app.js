@@ -33,7 +33,7 @@ function getsha256(input) {
 
 // Function returns bool if flag is valid or not
 function verifyflag(flag) {
-    var hash = getsha256(flag);
+    var hash = getsha256(flag).toUpperCase();
     return flags.includes(hash);
     // return Math.random() >= 0.5; // Test line - returns random bool
 }
