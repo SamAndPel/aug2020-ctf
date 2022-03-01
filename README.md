@@ -1,6 +1,8 @@
 # Riddle Me This CTF
 A CTF built by me and a few others in August 2020
 
+NB. The OSINT Twitter investigation element of the CTF is broken as the Twitter account used has been removed.
+
 ## Setup
 Install Node.JS or spin up a docker container to run the Node server. This functions as a starting point for the CTF, as well as a flag-checker. If hosting on a VM, the machine should be set to run the server at startup. Make sure to use `npm install` to install the required dependancies.
 
@@ -27,7 +29,7 @@ Add the steganography/zipped files in a sensible location (~/ reccomended)
 3.	Get flag - flag{QHIxZGRsM19tM190aDFz}
 4.	Solve from base64 to get - @r1ddl3_m3_th1s
 
-### Flag 4 - Twitter
+### Flag 4 - Twitter: BROKEN - ACCOUNT REMOVED
 1.	Go to the @ from last flag on twitter
 2.	Avoid two false leads for decoding rot3 and hex
 3.	Riddle on Twitter’s answer is ‘jellyfish’
